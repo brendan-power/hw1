@@ -130,3 +130,11 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+
+
+Statements to test
+
+SELECT ID, character_name, movie_id, actor_id
+FROM movie_roles;
+

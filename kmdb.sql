@@ -317,5 +317,23 @@ VALUES (
     "11"
 );
 
-SELECT ID, character_name, movie_id, actor_id
-FROM movie_roles;
+.mode column
+.headers off
+
+
+.print ""
+.print "Movies"
+.print "========"
+.print ""
+SELECT movies.title, movies.year_released, movies.MPAA_rating, studios.studio_name
+FROM movies INNER JOIN studios ON movies.studio_ID = studios.id;
+
+
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
+SELECT movies.title, actors.actor_name, movie_roles.character_name
+FROM movie_roles 
+INNER JOIN movies ON movie_roles.movie_id = movies.id 
+INNER JOIN actors ON actors.id = movie_roles.actor_id;
